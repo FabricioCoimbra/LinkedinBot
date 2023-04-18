@@ -29,7 +29,7 @@ namespace LinkedinBot.Service
             //login
             driver.FindElement(By.Id("session_key")).SendKeys(configuration?.GetSection("LinkedinProfile")["Email"]);
             driver.FindElement(By.Id("session_password")).SendKeys(configuration?.GetSection("LinkedinProfile")["Password"]);
-            driver.FindElement(By.LinkText("Entrar")).Click();
+            driver.FindElement(By.CssSelector("form > div.flex.justify-between.sign-in-form__footer--full-width > button")).Click();
             Thread.Sleep(5000);
 
             driver.Navigate().GoToUrl(requestParams.LinkToSearchRecruiters);
