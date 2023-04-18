@@ -1,0 +1,42 @@
+﻿@model LinkedinBot.DTO.RequestParams
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Olá mundo</h1>
+    <p>Bora catar os recrutadores do seu Linkedin.</p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="DoIt">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="LinkToSearchRecruiters" class="control-label"></label>
+                <input asp-for="LinkToSearchRecruiters" class="form-control" />
+                <span asp-validation-for="LinkToSearchRecruiters" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MessageToSend" class="control-label"></label>
+                <input asp-for="MessageToSend" class="form-control" />
+                <span asp-validation-for="MessageToSend" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="SendMessage" /> @Html.DisplayNameFor(model => model.SendMessage)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Connect" /> @Html.DisplayNameFor(model => model.Connect)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Bora trabalhar pra mim" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
